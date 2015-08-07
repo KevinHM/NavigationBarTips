@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qXy-Ne-jwT">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="SdN-Ni-Bwr">
+            <objects>
+                <navigationController id="qXy-Ne-jwT" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Sg3-PG-3HU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="9FQ-fS-SHX" kind="relationship" relationship="rootViewController" id="j90-6P-t1D"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gi1-if-dur" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="195" y="611"/>
+        </scene>
+        <!--主页-->
+        <scene sceneID="3a8-5h-HGM">
+            <objects>
+                <viewController id="9FQ-fS-SHX" customClass="KHMMainPageViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cit-j0-8YL"/>
+                        <viewControllerLayoutGuide type="bottom" id="P6N-MB-osQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xzO-Tj-hVE">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="主页" id="9fe-ld-VED"/>
+                    <connections>
+                        <segue destination="lhr-kl-Xai" kind="push" identifier="demoPageSegueID" id="h1a-gy-BV3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dw2-sf-AZN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="930" y="611"/>
+        </scene>
+        <!--Demo页Again-->
+        <scene sceneID="cnw-kw-Usr">
+            <objects>
+                <viewController id="09z-R0-6wJ" customClass="KHMDemoPageAgainVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7dO-VQ-SoT"/>
+                        <viewControllerLayoutGuide type="bottom" id="7Vh-Br-f6c"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mgM-ko-QTB">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ggX-0E-q3U">
+                                <rect key="frame" x="75" y="175" width="450" height="91"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="91" id="VoU-4W-abT"/>
+                                </constraints>
+                                <state key="normal" title="&lt;-Unwind To MainPage">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="EzI-od-lLp" kind="unwind" unwindAction="unwindToMainPage:" id="dj5-T6-t6h"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fyY-9Q-DYU">
+                                <rect key="frame" x="75" y="320" width="450" height="91"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="278" id="164-es-BM1"/>
+                                    <constraint firstAttribute="height" constant="91" id="pVY-hj-S7Z"/>
+                                    <constraint firstAttribute="height" constant="91" id="ydU-a1-zf0"/>
+                                </constraints>
+                                <state key="normal" title="&lt;-Unwind To DemoPage">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="164-es-BM1"/>
+                                        <exclude reference="pVY-hj-S7Z"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <segue destination="EzI-od-lLp" kind="unwind" unwindAction="unwindToDemoPage:" id="CnZ-Zw-j0O"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ggX-0E-q3U" firstAttribute="leading" secondItem="mgM-ko-QTB" secondAttribute="leading" constant="75" id="1Cs-zT-8to"/>
+                            <constraint firstAttribute="centerX" secondItem="ggX-0E-q3U" secondAttribute="centerX" id="Dvc-EF-NBp"/>
+                            <constraint firstAttribute="trailing" secondItem="fyY-9Q-DYU" secondAttribute="trailing" constant="75" id="E87-Dl-G2A"/>
+                            <constraint firstAttribute="centerY" secondItem="ggX-0E-q3U" secondAttribute="centerY" constant="79.5" id="e4v-rU-qXp"/>
+                            <constraint firstItem="fyY-9Q-DYU" firstAttribute="top" secondItem="ggX-0E-q3U" secondAttribute="bottom" constant="54" id="gg3-Oh-4hi"/>
+                            <constraint firstAttribute="trailing" secondItem="ggX-0E-q3U" secondAttribute="trailing" constant="75" id="nLq-R5-r7F"/>
+                            <constraint firstItem="fyY-9Q-DYU" firstAttribute="leading" secondItem="mgM-ko-QTB" secondAttribute="leading" constant="75" id="xlb-gC-Gxk"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Demo页Again" id="Hke-9W-WFz"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x6Z-GR-Qzb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="EzI-od-lLp" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2372" y="611"/>
+        </scene>
+        <!--Demo页-->
+        <scene sceneID="aLi-Zh-IEk">
+            <objects>
+                <viewController id="lhr-kl-Xai" customClass="KHMDemoPageViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2c0-g0-Jr1"/>
+                        <viewControllerLayoutGuide type="bottom" id="NO1-bc-Oc8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XSC-Ll-33D">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Demo页" id="hrE-6x-j8T"/>
+                    <connections>
+                        <segue destination="09z-R0-6wJ" kind="push" identifier="demoPageSegueAgainID" id="JX1-ac-mxr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="29T-ml-yhY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1644" y="611"/>
+        </scene>
+    </scenes>
+</document>
